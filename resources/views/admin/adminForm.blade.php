@@ -110,6 +110,19 @@
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
+
+            {{-- release date --}}
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Date released</label>
+                <input name="release_date"
+                       type="date"
+                       class="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('cover_path') border-red-500 @enderror"
+                       requiredo>
+                <p class="text-gray-500 text-sm mt-1">Max size: 10MB. Formats: JPEG, PNG, JPG, GIF</p>
+                @error('cover_path')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
             
             <!-- Cover Image -->
             <div>
