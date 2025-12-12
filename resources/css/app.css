@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+body{
+    background-color: whitesmoke;
+}
+nav a:hover{
+    color: #333;
+    text-decoration: underline;
+    
+    
+}
