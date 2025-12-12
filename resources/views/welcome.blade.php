@@ -1,6 +1,6 @@
 @extends('layouts.mainLayout')
 @section('title')
-    Home page
+    Dashboard page
 @endsection
 @section('content')
 Test

@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('mangas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->string('author_name');
             $table->string('status')->default('unfinished');
             $table->unsignedInteger('chapters');
             $table->string('cover_path');
-            $table->unsignedBigInteger('price');
+            $table->unsignedInteger('price');
+            $table->date('release_date');
         });
     }
 

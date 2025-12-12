@@ -8,13 +8,16 @@ use App\Models\Tags;
 
 class Mangas extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'description',
         'author_name',
         'status',
         'chapters',
-        'cover_path,price'
+        'cover_path',
+        'price',
+        'release_date',
     ];
         public function tags(): HasMany
     {
