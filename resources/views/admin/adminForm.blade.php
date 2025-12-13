@@ -1,6 +1,6 @@
 @extends('layouts.mainLayout')
 @section('title')
-    Admin panel
+    Create mangas
 @endsection
 @section('content')
 <div class="p-10 bg-gray-50 min-h-screen">

@@ -18,8 +18,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //admin
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware('admin');
-    Route::post('/admin/store-manga', [AdminController::class, 'storeManga'])->middleware('admin')->name('admin.manga.store');
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+        Route::get('/admin/create-manga', [AdminController::class, 'create'])->name('admin.manga.create');
+        Route::get('/admin/manga/{id}/edit', [AdminController::class, 'edit'])->name('admin.manga.edit');
+        Route::post('/admin/store-manga', [AdminController::class, 'storeManga'])->name('admin.manga.store');
+        Route::post('/admin/update-manga', [AdminController::class, 'update'])->name('admin.manga.update');
+        Route::post('/admin/delete-manga', [AdminController::class, 'delete'])->name('admin.manga.delete');
+    });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
