@@ -105,5 +105,11 @@ class MangaRepository
         return $this->mangaModel->where('id',$id)->first();
 
     }
+    public function latestFive(){
+        return $this->mangaModel->orderBy('release_date')->take(5)->get();
+    }
+    public function longest(){
+        return $this->mangaModel->orderBy('chapters')->take('10')->get();
+    }
 
 }

@@ -1,4 +1,7 @@
 @extends('layouts.mainLayout')
+@section('title')
+    Edit manga
+@endsection
 
 @section('content')
 <div class="min-h-screen bg-gradient-to-br from-stone-100 via-neutral-100 to-stone-200 py-14 px-6">
