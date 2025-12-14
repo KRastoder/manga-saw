@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\MangaRepository;
 use Illuminate\Support\Facades\Cache;
+use Session;
 
 class MangaController extends Controller
 {
@@ -28,6 +29,9 @@ class MangaController extends Controller
     }
     public function getItem($id)
     {
+        $manga = $this->mangaRepo->getMangaById($id);
+        
+        return view('shop.itemPage',compact('manga'));
 
     }
 

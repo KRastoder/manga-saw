@@ -14,7 +14,7 @@ Route::get('/shop/all',[SearchController::class , 'all'])->name('shop.all');
 Route::get('/shop/latest',[SearchController::class , 'latest'])->name('shop.latest');
 Route::get('/shop/longest',[SearchController::class , 'longest'])->name('shop.longest');
 Route::get('/shop/least-expencive',[SearchController::class , 'leastExpencive'])->name('shop.leastexpencive');
-Route::get('/shop/{id}',[MangaController::class , 'getManga'])->name('shop.item');
+Route::get('/shop/{id}',[MangaController::class , 'getItem'])->name('shop.item');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

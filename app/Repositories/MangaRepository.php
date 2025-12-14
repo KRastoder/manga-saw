@@ -98,20 +98,13 @@ class MangaRepository
         }
         return $manga;
     }
-    public function show(){ //Ako bude imalo previse mangi refactuj kasnije TODO
-        return $this->mangaModel->get();
-    }
-    public function find($id){
+    public function getMangaById($id){
         return $this->mangaModel->where('id',$id)->first();
 
     }
     public function latestFive(){
         return $this->mangaModel->orderBy('release_date')->take(5)->get();
     }
-    public function longest(){
-        return $this->mangaModel->orderBy('chapters')->take('10')->get();
-    }
-    
     
 
 }

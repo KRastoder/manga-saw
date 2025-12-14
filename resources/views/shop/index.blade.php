@@ -53,7 +53,7 @@
                         transition-all duration-100 ease-out
                         hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)]">
 
-                        <a href="#" class="block h-full">
+                        <a href="{{ route('shop.item',['id'=>$manga->id]) }}" class="block h-full">
 
                             {{-- Cover Image --}}
                             <div class="relative w-full overflow-hidden" style="height: 260px;">
