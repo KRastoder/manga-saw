@@ -5,41 +5,39 @@
 @endsection
 
 @section('content')
-
     {{-- Search Bar Section --}}
     <div class="w-full py-8">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-center mb-8">
                 <div class="relative w-full max-w-lg">
-                    <input
-                        type="text"
-                        placeholder="Search manga..."
-                        class="w-full rounded-full border-2 border-gray-200 px-6 py-3 pr-32 text-sm focus:outline-none focus:border-[#776E51] transition-colors shadow-sm"
-                    >
-                    <button
-                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#776E51] to-[#8a7f5e] text-white px-6 py-2 text-sm font-medium rounded-full">
-                        Search
-                    </button>
+                    <form action="{{ route('search') }}" method="GET">
+                        <input type="text" placeholder="Search manga..." name="search"
+                            class="w-full rounded-full border-2 border-gray-200 px-6 py-3 pr-32 text-sm focus:outlie-none focus:border-[#776E51] transition-colors shadow-sm">
+                        <button
+                            class="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#776E51] to-[#8a7f5e] text-white px-6 py-2 text-sm font-medium rounded-full">
+                            Search
+                        </button>
+                    </form>
                 </div>
             </div>
 
             {{-- Filter Buttons --}}
             <div class="flex flex-wrap justify-center gap-2 mb-6">
-                <button class="px-5 py-2 text-sm font-medium rounded-full  text-gray-700 shadow-sm">
+                <a class="px-5 py-2 text-sm font-medium rounded-full  text-gray-700 shadow-sm" href="{{ route('shop.all') }}"> 
                     All
-                </button>
-                <button class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700">
+                </a>
+                <a class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700" href="{{ route('shop.latest') }}">
                     Latest
-                </button>
+                </a>
                 <button class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700">
                     Recommendations
                 </button>
-                <button class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700">
+                <a class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700" href="{{ route('shop.longest') }}">
                     Longest
-                </button>
-                <button class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700">
-                    Shortest
-                </button>
+                </a>
+                <a class="px-5 py-2 text-sm font-medium rounded-full border-2 border-gray-200 text-gray-700" href="{{ route('shop.leastexpencive') }}">
+                    Least Expencive
+                </a>
             </div>
         </div>
     </div>
@@ -53,18 +51,14 @@
                     <article
                         class="group flex flex-col rounded-xl overflow-hidden border-2 border-stone-200 shadow-sm cursor-pointer
                         transition-all duration-100 ease-out
-                        hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)]"
-                    >
+                        hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)]">
 
                         <a href="#" class="block h-full">
 
                             {{-- Cover Image --}}
                             <div class="relative w-full overflow-hidden" style="height: 260px;">
-                                <img
-                                    src="{{ asset('storage/' . $manga->cover_path) }}"
-                                    alt="{{ $manga->name }}"
-                                    class="w-full h-full  transition-transform duration-300 group-hover:scale-110"
-                                >
+                                <img src="{{ asset('storage/' . $manga->cover_path) }}" alt="{{ $manga->name }}"
+                                    class="w-full h-full  transition-transform duration-300 group-hover:scale-110">
 
                                 {{-- Hover Overlay --}}
                                 <div
@@ -118,5 +112,4 @@
             </div>
         </div>
     </div>
-
 @endsection

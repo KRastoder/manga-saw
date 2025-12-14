@@ -112,5 +112,6 @@ class MangaRepository
         return $this->mangaModel->orderBy('chapters')->take('10')->get();
     }
     
+    
 
 }

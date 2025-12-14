@@ -3,11 +3,18 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[MangaController::class , 'index'])->name('home');
 Route::get('/shop',[MangaController::class , 'shop'])->name('shop');
+Route::get('/search',[SearchController::class , 'search'])->name('search');
+Route::get('/shop/all',[SearchController::class , 'all'])->name('shop.all');
+Route::get('/shop/latest',[SearchController::class , 'latest'])->name('shop.latest');
+Route::get('/shop/longest',[SearchController::class , 'longest'])->name('shop.longest');
+Route::get('/shop/least-expencive',[SearchController::class , 'leastExpencive'])->name('shop.leastexpencive');
+Route::get('/shop/{id}',[MangaController::class , 'getManga'])->name('shop.item');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

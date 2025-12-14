@@ -19,11 +19,16 @@ class MangaController extends Controller
             'latestMangas' => $latestMangas,
         ]);
     }
-    public function shop(){
+    public function shop()
+    {
         $latestMangas = Cache::remember('latest_five_mangas', 3600, fn() => $this->mangaRepo->latestFive());
-        return view('shop.index',[
-            'latestMangas' =>$latestMangas,
+        return view('shop.index', [
+            'latestMangas' => $latestMangas,
         ]);
+    }
+    public function getItem($id)
+    {
 
     }
+
 }

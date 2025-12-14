@@ -84,7 +84,7 @@
                             class="absolute left-0 right-0 bottom-5 h-[25%] bg-[#101211] flex items-center justify-center
                             opacity-0 group-hover:opacity-100 transition">
                             <span class="text-white text-lg font-semibold">
-                                Add to Cart
+                                Check out now!
                             </span>
                         </div>
 
