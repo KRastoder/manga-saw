@@ -17,9 +17,8 @@
 
             <div class="relative h-[540px]">
                 @foreach ($latestMangas as $index => $manga)
-                    <div class="absolute inset-0 transition-opacity duration-500 opacity-0 flex items-center gap-16"
+                    <div class="absolute inset-0 transition-opacity duration-500 opacity-0 flex items-center gap-20"
                         id="slide-content-{{ $index }}">
-
                         <!-- LEFT -->
                         <div class="w-[60%]">
                             <h1 class="text-7xl md:text-8xl font-bold font-serif text-black mb-6">
@@ -57,21 +56,13 @@
                         <!-- RIGHT -->
                         <div class="w-[40%] flex justify-end">
                             <img src="{{ asset('storage/' . $manga->cover_path) }}" alt="{{ $manga->name }}"
-                                class="w-full h-[540px] object-contain shadow-[0_4px_10px_#EEEBE5]">
+                                class="w-full h-[540px]  shadow-[0_4px_10px_#EEEBE5]">
                         </div>
 
                     </div>
                 @endforeach
             </div>
 
-            <style>
-                @foreach ($latestMangas as $index => $manga)
-                    #slide-{{ $index }}:checked~div #slide-content-{{ $index }} {
-                        opacity: 1;
-                        z-index: 10;
-                    }
-                @endforeach
-            </style>
 
         </div>
     </div>
@@ -79,18 +70,15 @@
     {{-- ================= FEATURED MANGAS / BOTTOM ================= --}}
     <div class="w-full bg-[#F4F2EE] mt-32 py-20">
         <div class="max-w-7xl mx-auto px-6">
-
             <h2 class="text-6xl font-bold font-serif text-black text-center mb-20">
                 Featured Mangas
             </h2>
-
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
-
                 @foreach ($latestMangas as $manga)
                     <a href="#" class="group relative block">
 
                         <img src="{{ asset('storage/' . $manga->cover_path) }}" alt="{{ $manga->name }}"
-                            class="w-full h-[340px] object-contain shadow-[0_4px_10px_#EEEBE5]">
+                            class="w-full h-[340px] ">
 
                         <div
                             class="absolute left-0 right-0 bottom-5 h-[25%] bg-[#101211] flex items-center justify-center
@@ -102,42 +90,9 @@
 
                     </a>
                 @endforeach
-
             </div>
-
         </div>
     </div>
-        <div class="w-full bg-[#F4F2EE] mt-32 py-20">
-        <div class="max-w-7xl mx-auto px-6">
-
-            <h2 class="text-6xl font-bold font-serif text-black text-center mb-20">
-                :atest
-            </h2>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
-
-                @foreach ($latestMangas as $manga)
-                    <a href="#" class="group relative block">
-
-                        <img src="{{ asset('storage/' . $manga->cover_path) }}" alt="{{ $manga->name }}"
-                            class="w-full h-[340px] object-contain shadow-[0_4px_10px_#EEEBE5]">
-
-                        <div
-                            class="absolute left-0 right-0 bottom-5 h-[25%] bg-[#101211] flex items-center justify-center
-                            opacity-0 group-hover:opacity-100 transition">
-                            <span class="text-white text-lg font-semibold">
-                                Add to Cart
-                            </span>
-                        </div>
-
-                    </a>
-                @endforeach
-
-            </div>
-
-        </div>
-    </div>
-
     {{-- ================= BRANDS STRIP ================= --}}
     <div class="w-full py-24">
         <div class="max-w-7xl mx-auto px-6">
@@ -207,3 +162,11 @@
         </div>
     </div>
 @endsection
+<style>
+    @foreach ($latestMangas as $index => $manga)
+        #slide-{{ $index }}:checked~div #slide-content-{{ $index }} {
+            opacity: 1;
+            z-index: 10;
+        }
+    @endforeach
+</style>
