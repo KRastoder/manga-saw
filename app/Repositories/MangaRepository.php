@@ -111,5 +111,6 @@ class MangaRepository
     public function longest(){
         return $this->mangaModel->orderBy('chapters')->take('10')->get();
     }
+    
 
 }

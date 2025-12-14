@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[MangaController::class , 'index'])->name('home');
+Route::get('/shop',[MangaController::class , 'shop'])->name('shop');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
