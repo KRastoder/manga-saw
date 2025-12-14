@@ -30,6 +30,11 @@ class MangaController extends Controller
     public function getItem($id)
     {
         $manga = $this->mangaRepo->getMangaById($id);
+        if(!$manga){
+            abort(404);
+
+        }
+
         
         return view('shop.itemPage',compact('manga'));
 

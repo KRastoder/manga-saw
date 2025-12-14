@@ -15,7 +15,7 @@
                         <div class="space-y-3">
                             @for ($i = 1; $i <= $manga->chapters; $i++)
                                 <div class="group relative">
-                                    <a href="" 
+                                    <a href="{{ route('addToCart', ['id' => $manga->id, 'chapter' => $i, 'quantity' => 1]) }}" 
                                        class="block px-4 py-3 border border-gray-200 rounded hover:border-gray-900 transition-all duration-200">
                                         <span class="text-gray-700 group-hover:text-gray-900">Chapter {{ $i }}</span>
                                         <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -35,7 +35,7 @@
                     <div class="h-[450px]">
                         <img src="{{ asset('storage/' . $manga->cover_path) }}" 
                              alt="{{ $manga->name }}"
-                             class="w-full h-full ">
+                             class="w-full h-full object-cover">
                     </div>
                     {{-- Details Section Below Image --}}
                     <div class="p-8">
@@ -43,6 +43,7 @@
                         <p class="text-gray-600 mb-6">by {{ $manga->author_name }}</p>
                         <div class="mb-6">
                             <p class="text-2xl font-medium text-gray-900">${{ number_format($manga->price, 2) }}</p>
+                            <p class="text-sm text-gray-500 mt-1">per chapter</p>
                         </div>
                         <div class="mb-6">
                             <h2 class="text-lg font-medium text-gray-900 mb-3">Description</h2>
