@@ -79,10 +79,8 @@ class MangaRepository
             'release_date' => $validatedData['release_date'] ?? $manga->release_date,
         ]);
 
-        // Handle cover image update (optional)
         if ($request->hasFile('cover_path')) {
 
-            // Delete old cover if exists
             if ($manga->cover_path && \Storage::disk('public')->exists($manga->cover_path)) {
                 \Storage::disk('public')->delete($manga->cover_path);
             }
@@ -104,6 +102,9 @@ class MangaRepository
     }
     public function latestFive(){
         return $this->mangaModel->orderBy('release_date')->take(5)->get();
+    }
+    public function show(){
+        return $this->mangaModel->get();
     }
     
 

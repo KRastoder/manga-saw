@@ -15,7 +15,7 @@ class AdminController extends Controller
     public function index(){
         
         return view('admin.admin',[
-            'mangas' => $this->mangaRepo->show()
+            'mangas' => $this->mangaRepo->show(),
         ]);
     }
     public function create()
