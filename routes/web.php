@@ -44,7 +44,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/admin/delete-manga', [AdminController::class, 'delete'])->name('admin.manga.delete');
 
         //orders
-        
+        Route::get('/admin/orders', [AdminController::class, 'ordersPage'])->name('admin.ordersPage');
+        Route::post('/admin/orders', [AdminController::class, 'updateStatus'])->name('admin.orders.update');
     });
 });
 

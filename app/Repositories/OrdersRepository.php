@@ -32,6 +32,7 @@ class OrdersRepository
             'city'          => $request->city,
             'zip_code'      => $request->zip,
             'total'         => $total,
+            'status' => 'pendihng',
         ]);
 
         foreach ($cart as $item) {
@@ -47,4 +48,12 @@ class OrdersRepository
 
     }
 
+    public function show(){
+        return $this->ordersModel->get();
+    }
+
+    public function updateStatus($request){
+    // Orders::where('id', $id)->update(['status' => $request->status]);
+    $this->ordersModel->where('id',$request->orderId)->update(['status'=>$request->status]);
+    }
 }

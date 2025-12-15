@@ -18,6 +18,7 @@ class Orders extends Model
         'street_adress',
         'zip_code',
         'total',
+        'status',
     ];
 
     /**

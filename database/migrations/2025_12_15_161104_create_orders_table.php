@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('street_adress');
             $table->unsignedSmallInteger('zip_code');
             $table->unsignedBigInteger('total');
+            $table->string('status')->default('pending'); 
             $table->timestamps();
         });
     }
