@@ -75,7 +75,7 @@
             </h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
                 @foreach ($latestMangas as $manga)
-                    <a href="#" class="group relative block">
+                    <a href="{{ route('shop.item',['id'=>$manga->id])  }}" class="group relative block">
 
                         <img src="{{ asset('storage/' . $manga->cover_path) }}" alt="{{ $manga->name }}"
                             class="w-full h-[340px] ">

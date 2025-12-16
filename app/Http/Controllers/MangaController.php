@@ -14,7 +14,7 @@ class MangaController extends Controller
     }
     public function index()
     {
-        Cache::forget('latest_five_mangas');
+        // Cache::forget('latest_five_mangas'); 
         $latestMangas = Cache::remember('latest_five_mangas', 3600, fn() => $this->mangaRepo->latestFive());
         return view('welcome', [
             'latestMangas' => $latestMangas,

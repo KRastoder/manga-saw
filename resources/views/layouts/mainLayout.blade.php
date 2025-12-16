@@ -13,7 +13,6 @@
             <li class="font-semibold"><a href="/">HOME</a></li>
             <li class="font-semibold"><a href="/">ABOUT</a></li>
             <li class="font-semibold"><a href="/shop">SHOP</a></li>
-            <li class="font-semibold"><a href="/">ACCESSORIES</a></li>
             <li class="font-semibold"><a href="/">CONTACT</a></li>
             <li class="font-semibold">
                 <a href="{{ route('cart') }}" class="relative inline-block hover:opacity-80 transition">

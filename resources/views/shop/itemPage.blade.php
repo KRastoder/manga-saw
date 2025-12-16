@@ -35,7 +35,7 @@
                     <div class="h-[450px]">
                         <img src="{{ asset('storage/' . $manga->cover_path) }}" 
                              alt="{{ $manga->name }}"
-                             class="w-full h-full object-cover">
+                             class="w-full h-full ">
                     </div>
                     {{-- Details Section Below Image --}}
                     <div class="p-8">
